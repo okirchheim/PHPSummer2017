@@ -6,7 +6,13 @@
     </head>
     <body>
         <?php
-        // put your code here
+        
+        include '.model/dbconnect.php';
+        include './models/addressCRUD.php';
+        
+        $addresses = readAllAddress();
+        
+        include '.templats/view-address.html.php'
         ?>
     </body>
 </html>
