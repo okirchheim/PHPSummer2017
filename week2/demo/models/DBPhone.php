@@ -1,22 +1,18 @@
 <?php
-
 /**
  * Description of DBSpring
  *
  * @author GFORTI
  */
-class DBSpring extends DB {
-    //put your code here
-    
-    function __construct() {
-        
-        $this->setDns('mysql:host=localhost;port=3306;dbname=PHPAdvClassSpring2017');
-        $this->setPassword('');
-        $this->setUser('root');
-        
+class DBPhone extends DB{
+    //put your code here    
+    function __construct()
+    {
+        parent:: _construct('mysql:host=localhost;port=3306;dbname=PHPAdvClassSpring2017','root','');       
     }
     
-    function getAllPhones() {
+    function getAllPhones()
+    {
         $db = $this->getDb();
         $stmt = $db->prepare("SELECT * FROM phone");
 
