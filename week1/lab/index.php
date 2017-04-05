@@ -5,14 +5,12 @@
         <title></title>
     </head>
     <body>
-        <?php
-        
-        include '.model/dbconnect.php';
+        <?php        
+        include './models/dbconnect.php';
         include './models/addressCRUD.php';
         
         $addresses = readAllAddress();
-        
-        include '.templats/view-address.html.php'
+        include './templates/view-address.html.php';        
         ?>
     </body>
 </html>

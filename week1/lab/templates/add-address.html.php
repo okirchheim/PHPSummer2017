@@ -8,7 +8,7 @@
        Full Name: <input name="fullname" value="<?php echo $fullname; ?>" /> <br />
        Email: <input name="email" value="<?php echo $email; ?>" /> <br />       
        Address : <input name="addressline1" value="<?php echo $addressline1; ?>" /> <br />
-       city: <input name="city" value="<?php echo $city; ?>" /> <br />
+       City: <input name="city" value="<?php echo $city; ?>" /> <br />
        <select name="state">
             <?php foreach ($states as $key => $value): ?> 
               <option value="<?php echo $key; ?>" <?php if ( $selectedState == $key ): ?> selected="selected" <?php endif; ?>><?php echo $value; ?></option>
