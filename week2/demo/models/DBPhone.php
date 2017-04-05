@@ -8,7 +8,7 @@ class DBPhone extends DB{
     //put your code here    
     function __construct()
     {
-        parent:: _construct('mysql:host=localhost;port=3306;dbname=PHPAdvClassSpring2017','root','');       
+        parent::__construct('mysql:host=localhost;port=3306;dbname=phpadvclassspring2017','root','');       
     }
     
     function getAllPhones()

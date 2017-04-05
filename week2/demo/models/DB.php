@@ -1,12 +1,7 @@
 <?php
 
-
-/**
- * Description of DB
- *
- * @author GFORTI
- */
-class DB {
+class DB
+{
     //put your code here
     
     protected $db = null;
