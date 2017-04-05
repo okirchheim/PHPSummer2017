@@ -3,6 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link rel="stylesheet" href="./templates/bootstrap.css">
+         <link rel="stylesheet" href="./templates/style.css">
+        <!-- Optional theme -->  
     </head>
     <body>
         <?php        
