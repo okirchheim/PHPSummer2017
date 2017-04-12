@@ -11,7 +11,7 @@
  *
  * @author 001393451
  */
-class Message implements Imessage
+class Message implements IMessage
 {
 //put your code here
     

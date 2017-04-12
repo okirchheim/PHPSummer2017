@@ -10,8 +10,8 @@
         include './Scope.php';
         
         try {
-            $scope = new week3\gforti\Scope();
-        
+            $scope = new week3\gforti\Scope();           
+            
             $scope->test = 'hello';
         
             echo $scope->test;
