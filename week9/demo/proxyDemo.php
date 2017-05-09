@@ -77,12 +77,22 @@
 
                 httpRequest.open(verb, url, true);
                 httpRequest.addEventListener('readystatechange', callComplete);
-
+                
                 function callComplete() {
-                    if (this.readyState === XMLHttpRequest.DONE) {
+                     if ( this.readyState === XMLHttpRequest.DONE ) {
                         console.log(this.responseText);
                         results.value = this.responseText;
-                    } // else waiting for the call to complete
+                        var response = JSON.parse(this.responseText);
+
+                        if (response && response.data && response.data.hasOwnProperty('token')) {
+                            window.localStorage.setItem('token', response.data.token);
+                        }
+                     } // else waiting for the call to complete
+                }
+                
+                var token = window.localStorage.getItem('token');
+                if (token) {
+                    httpRequest.setRequestHeader("Authorization", "Bearer " + token);
                 }
 
                 if (verb === 'GET') {
@@ -91,6 +101,7 @@
                     httpRequest.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
                     httpRequest.send(JSON.stringify(data));
                 }
+                
             }
         </script>
 

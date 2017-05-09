@@ -8,6 +8,8 @@ include_once './autoload.php';
  */
 $restServer = new RestServer();
 
+$jwt = new JWT();
+
 try {
     
     $restServer->setStatus(200);
@@ -17,6 +19,15 @@ try {
     $id = $restServer->getId();
     $serverData = $restServer->getServerData();
     
+    $token = $restServer->getBearerToken();
+    $secrect_key = getenv('HTTP_SECRECT_KEY');
+      
+    if (!in_array($resource, ['login', 'signup'])){
+        
+        if ( is_null($token) || !$jwt->valididateJWT($token, $secrect_key)  ) {            
+            throw new InvalidArgumentException('Please go to login for a new token. Token invalid: ' . $token);
+        }
+    }
        
     /* 
      * You can add resoruces that will be handled by the server 
@@ -30,7 +41,7 @@ try {
      */
     if ( 'address' === $resource ) {
         
-        $resourceData = new AddressResource();
+        $resourceData = new AddressResoruce();
         
         if ( 'GET' === $verb ) {
             
@@ -67,6 +78,9 @@ try {
             
         }
         
+    } elseif ( 'login' === $resource ) {
+        $restServer->setData(array("token" => $jwt->generateJWT(array("email"=>'test@test.com'), $secrect_key)));
+                
     } else {
         throw new InvalidArgumentException($resource . ' Resource Not Found');
         
