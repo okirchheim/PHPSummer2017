@@ -8,7 +8,7 @@
         <?php
         /* ****************UPDATE FILE**************** */        
         
-        $uploadfile = filter_input(INPUT_POST, 'filename');
+        
         
         
         $file = '.'.DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR.$uploadfile;    
