@@ -7,10 +7,11 @@
     <body>
         <?php
         /* ****************UPDATE FILE**************** */        
-
-        $file = '.'.DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR.'img_0e9546c3d6c84849914d69905c8586eeb54d1e46.jpg';
-
         
+        $uploadfile = filter_input(INPUT_POST, 'filename');
+        
+        
+        $file = '.'.DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR.$uploadfile;    
 
         
         //http://php.net/manual/en/fileinfo.constants.php

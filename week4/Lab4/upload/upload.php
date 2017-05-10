@@ -15,7 +15,6 @@
 
             function upLoad($keyName) {
 
-
                 // Undefined | Multiple Files | $_FILES Corruption Attack
                 // If this request falls under any of them, treat it invalid.
                 if (!isset($_FILES[$keyName]['error']) || is_array($_FILES[$keyName]['error'])) {
@@ -36,7 +35,7 @@
                 }
 
                 // You should also check filesize here. 
-                if ($_FILES[$keyName]['size'] > 1000000) {
+                if ($_FILES[$keyName]['size'] > 10000000) {
                     throw new RuntimeException('Exceeded filesize limit.');
                 }
 
@@ -44,6 +43,13 @@
                 // Check MIME Type by yourself.
                 $finfo = new finfo(FILEINFO_MIME_TYPE);
                 $validExts = array(
+                    'txt' => 'text/plain',
+                    'html' => 'text/html',
+                    'pdf' => 'application/pdf',
+                    'doc' => 'application/msword',
+                    'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                    'xls' => 'application/vnd.ms-excel',
+                    'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                     'jpg' => 'image/jpeg',
                     'png' => 'image/png',
                     'gif' => 'image/gif'
