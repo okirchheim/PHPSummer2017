@@ -1,6 +1,6 @@
 <?php
 
-include_once './autoload.php';
+include_once './bootstrap.php';
 
 /*
  * The Rest server is sort of like the page is hosting the API
@@ -30,7 +30,7 @@ try {
      */
     if ( 'address' === $resource ) {
         
-        $resourceData = new AddressResource();
+        $resourceData = new AddressResoruce();
         
         if ( 'GET' === $verb ) {
             
@@ -85,4 +85,4 @@ try {
 
 
 echo $restServer->getReponse();
-exit();
+die();

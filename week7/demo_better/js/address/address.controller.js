@@ -23,7 +23,8 @@
                 vm.addresses = response;
             });
         }
-
-    }
+        
+        function adressdelete(id){
+            AddressService.deleteaddress(vm.addressId).then(function(){ vm.message = 'Address Deleted';}
     
 })();

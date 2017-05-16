@@ -23,7 +23,12 @@
                 templateUrl: 'js/address/address-detail.template.html',
                 controller: 'AddressDetailController',
                 controllerAs: 'vm'
+            })
+            when('address/delete/:addressId', {
+                templateUrl: 'js/address/Deletepage.html',
+                controller: 'addressdeleteController',
+                controllerAs: 'vm'
             });
     }
-
+    
 })();
