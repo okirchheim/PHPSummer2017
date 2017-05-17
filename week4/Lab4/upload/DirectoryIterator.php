@@ -6,6 +6,9 @@
     </head>
     <body>
         <?php
+        
+        $fileName = filter_input(INPUT_SERVER, 'REQUEST_METHOD') == 'Get'; 
+        
         // http://php.net/manual/en/class.directoryiterator.php
         //DIRECTORY_SEPARATOR 
 

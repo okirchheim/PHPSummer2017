@@ -6,6 +6,42 @@
     </head>
     <body>
         <style type="text/css">
+            
+
+html{
+	background:#999999;
+}
+
+body{
+	background: no-repeat center center;
+	min-height: 600px;
+    padding: 20px 0 0;
+	font:14px/1.3 'Segoe UI',Arial, sans-serif;
+}
+
+a, a:visited {
+	text-decoration:none;
+	outline:none;
+	color:#54a6de;
+}
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+section, footer{
+	display: block;
+}
             textarea {
                 width: 500px;
                 height: 100px;
@@ -38,7 +74,7 @@
         password <input type="text" name="password" value="" />
         <br />
         <br />
-        <button>Make Call</button>
+        <button style="">Make Call</button>
         <h3>Results</h3>
 
         <textarea name="results"></textarea>
