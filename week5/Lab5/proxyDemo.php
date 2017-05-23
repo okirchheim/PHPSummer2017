@@ -73,7 +73,7 @@
 
                 var xmlhttp = new XMLHttpRequest();
 
-                var url = './api/models/'+resource;
+                var url = './api/models/'+ resource;
 
                 xmlhttp.open(verb, url, true);
 
