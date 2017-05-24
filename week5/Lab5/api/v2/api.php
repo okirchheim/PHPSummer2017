@@ -55,13 +55,21 @@ try {
                 throw new InvalidArgumentException('Corp ID ' . $id . ' was not found');
             }            
         }
-        else if ( 'DELETE' === $verb ) {            
+         if ( 'DELETE' === $verb ) {            
             if ( NULL === $id ) {
                 throw new InvalidArgumentException('Corp ID' . $id . ' was not found');
-            }            
+            }
+            if($resourceData->delete($id))
+            {
+                $restServer->setMessage('Corp Deleted');                
+            }
+            else
+            {
+               throw new Exception('Corp could not be deleted');
+            }
         }        
     } else {
-        throw new InvalidArgumentException($resource . ' Resource Not Found');        
+        throw new InvalidArgumentException($resource . ' Resource Not Foundfdsgsgfds');        
     }      
     
     /* 400 exeception means user sent something wrong */
