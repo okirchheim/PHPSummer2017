@@ -28,9 +28,11 @@ try {
      * But in this example we will just code it out.
      * 
      */
-    if ( 'address' === $resource ) {
+    var_dump($resource);
+    
+    if ( 'corps' === $resource ) {
         
-        $resourceData = new AddressResource();
+        $resourceData = new CorpsResource();
         
         if ( 'GET' === $verb ) {
             
@@ -50,10 +52,10 @@ try {
             
 
             if ($resourceData->post($serverData)) {
-                $restServer->setMessage('Address Added');
+                $restServer->setMessage('Corp Added');
                 $restServer->setStatus(201);
             } else {
-                throw new Exception('Address could not be added');
+                throw new Exception('Corp could not be added');
             }
         
         }
@@ -62,7 +64,14 @@ try {
         if ( 'PUT' === $verb ) {
             
             if ( NULL === $id ) {
-                throw new InvalidArgumentException('Address ID ' . $id . ' was not found');
+                throw new InvalidArgumentException('Corp ID ' . $id . ' was not found');
+            }
+            
+        }
+        else if ( 'DELETE' === $verb ) {
+            
+            if ( NULL === $id ) {
+                throw new InvalidArgumentException('Corp ID' . $id . ' was not found');
             }
             
         }
@@ -70,7 +79,8 @@ try {
     } else {
         throw new InvalidArgumentException($resource . ' Resource Not Found');
         
-    }
+    }   
+    
    
     
     /* 400 exeception means user sent something wrong */

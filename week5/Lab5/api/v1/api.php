@@ -28,7 +28,9 @@ try {
      * But in this example we will just code it out.
      * 
      */
-    if ( 'corp' === $resource ) {
+ 
+    
+    if ( 'corps' === $resource ) {
         
         $resourceData = new CorpsResource();
         

@@ -5,6 +5,8 @@
  *
  * @author GForti
  */
+
+
 class DB {
     
     protected $db = null;
