@@ -32,6 +32,8 @@
         <br />
         <br />
         Data(optional):<br />   
+        id <input type="number" name="id" value="" />
+        <br />
         Corporation <input type="text" name="corp" value="" />
         <br />
         Email <input type="email" name="email" value="" />
@@ -43,8 +45,9 @@
         owner <input type="text" name="owner" value="" />
         <br />
         phone <input type="number" pattern="[0-9]*" maxlength="10" min="0" name="phone">
-        
         <br />
+              
+        
         <br />
         <button>Make Call</button>
         <h3>Results</h3>
@@ -67,8 +70,7 @@
                     'incorp_dt' : document.querySelector('input[name="incorp_dt"]').value,
                     'location' : document.querySelector('input[name="location"]').value,
                     'owner' : document.querySelector('input[name="owner"]').value,
-                    'phone' : document.querySelector('input[name="phone"]').value,
-                    
+                    'phone' : document.querySelector('input[name="phone"]').value
                 };            
                 var results = document.querySelector('textarea[name="results"]');
 
