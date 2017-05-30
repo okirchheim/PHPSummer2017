@@ -68,7 +68,8 @@ try {
             }
             
         }
-        else if ( 'DELETE' === $verb ) {
+        
+        if ( 'DELETE' === $verb ) {
             
             if ( NULL === $id ) {
                 throw new InvalidArgumentException('Corp ID' . $id . ' was not found');

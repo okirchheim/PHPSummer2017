@@ -28,8 +28,9 @@ class CorpsResource extends DBSpring implements IRestModel {
         /* note you should validate before adding to the data base */
         $stmt = $this->getDb()->prepare("INSERT INTO corps SET corp = :corp, email = :email, incorp_dt = :incorp_dt, location = :location,"
                 . " owner = :owner, phone = :phone WHERE id = :id");
+       
         $binds = array(
-            ":id" => $serverData['id'],
+            ":id" =>$id,
             ":corp" => $serverData['corp'],
             ":email" => $serverData['email'],
             ":incorp_dt" => $serverData['incorp_dt'],

@@ -32,8 +32,7 @@
         <br />
         <br />
         Data(optional):<br />   
-        id <input type="number" name="id" value="" />
-        <br />
+        
         Corporation <input type="text" name="corp" value="" />
         <br />
         Email <input type="email" name="email" value="" />
@@ -64,7 +63,7 @@
                 var verbfield = document.querySelector('select[name="verb"]');
                 var verb = verbfield.options[verbfield.selectedIndex].value;
                 var resource = document.querySelector('input[name="resource"]').value;
-                var data = {
+                var data = {                    
                     'corp' : document.querySelector('input[name="corp"]').value,
                     'email' : document.querySelector('input[name="email"]').value,
                     'incorp_dt' : document.querySelector('input[name="incorp_dt"]').value,
@@ -78,7 +77,7 @@
 
                 var url = './api/v1/' + resource;
 
-                 httpRequest.open(verb, url, true);
+                httpRequest.open(verb, url, true);
                 httpRequest.addEventListener('readystatechange', callComplete);
                 function callComplete() {
                     if (this.readyState === XMLHttpRequest.DONE) {
@@ -86,9 +85,12 @@
                         results.value = this.responseText;
                     } // else waiting for the call to complete
                 }
-                if (verb === 'GET') {
-                    httpRequest.send(null);
-                } else {
+                if (verb === 'GET'){
+                    httpRequest.send(null);  
+                }
+                     
+                 else
+                {
                     httpRequest.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
                     httpRequest.send(JSON.stringify(data));
                 }
